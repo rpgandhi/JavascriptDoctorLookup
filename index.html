@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="build/css/vendor.css" rel="stylesheet" type="text/css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-    <link href="build/css/vendor.css" rel="stylesheet" type="text/css">
     <title>Doctor Lookup</title>
   </head>
   <body>
-    <form id="doctorlookup-form">
+    <!-- <form id="doctorlookup-form"> -->
       <label for="symptom">Enter a symptom:</label>
       <input id="symptom" type="text">
+      <button type="button" name="button" id="searchSymptom">Search Symptoms</button>
+      <br>
+      <br>
       <label for="doctor">Enter a doctor's name:</label>
       <input id="doctor" type="text">
-      <button type="submit">Submit</button>
-    </form>
-    <ul id="results"></ul>
+      <button type="button" name="button" id="searchDoctor">Search Doctors</button>
+    <!-- </form> -->
+
+    <ul id="symptomList"></ul>
+    <ul id="doctorList"></ul>
   </body>
 </html>
