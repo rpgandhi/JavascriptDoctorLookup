@@ -2,32 +2,40 @@ import { ApplicationModule } from "./../js/doctorlookup.js";
 // const ApplicationModule = require('./../js/doctorlookup.js').applicationModule;
 
 
+
+//   let displaySymptomData = function(results) {
+//   results.forEach(function(result) {
+//     $('#symptomList').append('<li>' + result.name + '</li>');
+//   });
+// };
+
+
+let displayDoctorData = function(response) {
+  for (let i = 0; i <= response.length; i++){
+    $('#doctorList').append('<li>' + reponse.name[i] + '</li>');
+    console.log("DOCTORNAME" + response.name[i]);
+  }
+};
+
+
 $(document).ready(function(){
-  const applicationModule = new ApplicationModule();
 
-  let displaySymptomData = function(results) {
-  results.forEach(function(result) {
-    $('#symptomList').append('<li>' + result.name + '</li>');
-  });
-};
+  let applicationModule = new ApplicationModule();
 
-let displayDoctorData = function(results) {
-  results.forEach(function(result) {
-    $('#doctorList').append('<li>' + result.name + '</li>');
-  });
-};
-
-
-  $("#searchSymptoms").click(function(event){
+  $("#searchSymptoms").submit(function(event){
     event.preventDefault();
+
     let userSymptom = $("#symptom").val();
+    console.log(userSymptom);
     applicationModule.getDataSymptoms(userSymptom, displaySymptomData);
 
   });
 
-  $("#searchDoctor").click(function(event){
+  $("#searchDoctors").submit(function(event){
     event.preventDefault();
+
     let userDoctor = $("#doctor").val();
+    console.log(userDoctor);
     applicationModule.getDataDoctors(userDoctor, displayDoctorData);
 
   });
