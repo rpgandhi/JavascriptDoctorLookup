@@ -2,18 +2,21 @@ import { ApplicationModule } from "./../js/doctorlookup.js";
 // const ApplicationModule = require('./../js/doctorlookup.js').applicationModule;
 
 
+let displaySymptomData = function(response) {
+  $("#symptomList").show();
 
-//   let displaySymptomData = function(results) {
-//   results.forEach(function(result) {
-//     $('#symptomList').append('<li>' + result.name + '</li>');
-//   });
-// };
-
+  for (let i = 0; i <= response.data.length; i++){
+    $('#symptomList').append('<li>' + reponse.data.name[i] + '</li>');
+    console.log("SYMPTOMNAME" + response.data.name[i]);
+  }
+};
 
 let displayDoctorData = function(response) {
-  for (let i = 0; i <= response.length; i++){
-    $('#doctorList').append('<li>' + reponse.name[i] + '</li>');
-    console.log("DOCTORNAME" + response.name[i]);
+  $("#doctorList").show();
+
+  for (let i = 0; i <= response.data.length; i++){
+    $('#doctorList').append('<li>' + reponse.data.name[i] + '</li>');
+    console.log("DOCTORNAME" + response.data.name[i]);
   }
 };
 
