@@ -15,6 +15,7 @@
       <button type="submit" name="button">Search Symptoms</button>
     </form>
       <br/>
+      <p id="noResultsSymptoms"></p>
       <br/>
     <form id="searchDoctors"
       <label for="doctor">Enter a doctor's name:</label>
@@ -22,7 +23,13 @@
       <button type="submit" name="button" id="searchDoctor">Search Doctors</button>
     </form>
 
-    <ul id="symptomList"></ul>
-    <ul id="doctorList"></ul>
+    <h3 id="errorMessage">Error! </h3>
+    <ul id="symptomList">The following doctors treat this condition: <br></ul>
+    <p id="noResultsDoctor"></p>
+    <div id="doctorDisplay">
+    <h3>The following doctors match your search criteria:</h3>
+    <ul id="doctorList" style="list-style:none"></ul>
+
+  </div>
   </body>
 </html>
